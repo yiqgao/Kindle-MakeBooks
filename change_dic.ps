@@ -1,0 +1,8 @@
+$web = $env:USERPROFILE+'\OneDrive\Sync\Work\webdic.txt' 
+$temp = Get-Content $web 
+$b =0 
+$dic = foreach ($item in $temp -match '<link href="mwal.css" type="text/css" rel="Stylesheet" /><h-w>.*?</p-r>')
+{
+    $item -replace('<link href="mwal.css" type="text/css" rel="Stylesheet" /><h-w>',':') -replace('</h-w> <p-r>',',') -replace('</p-r>',';')
+}
+$dic | Out-File "C:\Users\v-yiqga\OneDrive\Sync\Work\dictionary.txt"
