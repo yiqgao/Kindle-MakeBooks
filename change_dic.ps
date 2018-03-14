@@ -6,3 +6,24 @@ $dic = foreach ($item in $temp -match '<link href="mwal.css" type="text/css" rel
     $item -replace('<link href="mwal.css" type="text/css" rel="Stylesheet" /><h-w>',':') -replace('</h-w> <p-r>',',') -replace('</p-r>',';')
 }
 $dic | Out-File "C:\Users\v-yiqga\OneDrive\Sync\Work\dictionary.txt"
+
+
+
+$web = $env:USERPROFILE+'\OneDrive\Sync\Work\Scripts\dict.txt' 
+$temp = Get-Content $web 
+$dic = foreach ($item in $temp)
+{
+    if ($item -match(':.*?<'))
+    {echo $Matches[0]}
+    if ($item -match('<h-w>.*?</h-w>'))
+    {echo $Matches[0]}
+    if ($item -match('<VA>.*?</VA>'))
+    {echo $Matches[0]}
+    if ($item -match('<p-r>.*?</p-r>'))
+    {echo $Matches[0]}
+    if ($item -match('<g-r>.*?</g-r>'))
+    {echo $Matches[0]}
+    if ($item -match('see ☞ <a href=.*?</a>'))
+    {echo $Matches[0]}
+}
+$dic | Out-File "C:\Users\v-yiqga\OneDrive\Sync\Work\dic\dict.txt"
