@@ -5,3 +5,7 @@
 Html可用于修改mobi,azw3,epub格式，该文档将进行数据分析和处理。
 
 数据处理相关的所有数据保存在<https://1drv.ms/u/s!Ao9Of0JgO6MUowyI_AnM5k475TcJ>，为SQL Server的bak备份文件。
+
+## Vocabulary.com kindle词典1.0版本已经完成，请下载dic.mobi
+
+此版本中仅收集了18000多条带有详细解释的词条，后续会融合各种词典数据，加入音标，音节，词频等。
